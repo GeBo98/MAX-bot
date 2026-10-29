@@ -1,10 +1,10 @@
 import os
 
 # Токен: лучше через переменную окружения, но для теста можно оставить строку
-TOKEN = os.getenv("MAX_BOT_TOKEN", "f9LHodD0cOLFlMxRG9oy0VbE7FdimBe7AxtJ85Ns9LzZlfdsjoRDm8fn3fZbPBe3yedf1vD0TnfKx5u4wg_E")
+TOKEN = os.getenv("BOT_TOKEN")
 
 # Твой user_id в MAX
-ADMIN_USER_ID = 32836451
+ADMIN_USER_ID = os.getenv("ADMIN_USER_ID")
 
 # Файл состояния
 STATE_FILE = "poll_state.json"
