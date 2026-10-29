@@ -105,6 +105,7 @@ def _handle_admin_command(bot, msg, text_lower: str) -> None:
         bot.send_message("🧪 Тестовый опрос отправлен.", user_id=sender_id)
 
 def main() -> None:
+    print("BOOT: main.py started", flush=True)
     storage.load_state()
     bot = MaxBot(config.TOKEN, verify=False)
 
@@ -126,4 +127,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+
     main()
