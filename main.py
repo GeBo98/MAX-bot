@@ -111,10 +111,13 @@ def main() -> None:
     bot = MaxBot(config.TOKEN, verify=False)
     print("BOOT: bot created", flush=True)
 
-    scheduler.start(bot)
-    print("BOOT: scheduler started", flush=True)
+    try:
+        scheduler.start(bot)
+        print("BOOT: scheduler started", flush=True)
+    except Exception as e:
+        print(f"BOOT: scheduler error: {e}", flush=True)
 
-    print("🤖 Бот запущен.")
+    print("🤖 Бот запущен." , flush=True)
     for update in bot.poll(types=["message_created", "message_callback"]):
         print("BOOT: got update", flush=True)
         try:
