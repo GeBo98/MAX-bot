@@ -7,7 +7,7 @@ TOKEN = os.getenv("BOT_TOKEN")
 ADMIN_USER_ID = os.getenv("ADMIN_USER_ID")
 
 # Файл состояния
-STATE_FILE = "poll_state.json"
+STATE_FILE = "/app/data/poll_state.json"
 IMAGES_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "images")
 # Время ежедневной отправки (формат schedule)
 DAILY_TIME = "19:22"
