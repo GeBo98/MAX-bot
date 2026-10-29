@@ -107,12 +107,16 @@ def _handle_admin_command(bot, msg, text_lower: str) -> None:
 def main() -> None:
     print("BOOT: main.py started", flush=True)
     storage.load_state()
+    print("BOOT: state loaded", flush=True)
     bot = MaxBot(config.TOKEN, verify=False)
+    print("BOOT: bot created", flush=True)
 
     scheduler.start(bot)
+    print("BOOT: scheduler started", flush=True)
 
     print("🤖 Бот запущен.")
     for update in bot.poll(types=["message_created", "message_callback"]):
+        print("BOOT: got update", flush=True)
         try:
             if update.update_type == "message_callback":
                 _handle_callback(bot, update)
